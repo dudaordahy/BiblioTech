@@ -8,13 +8,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(175, 175, 175);
+    background-color: rgb(210, 210, 210);
     height: 80px;
 
 }
 
 .search{
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(235, 235, 235);
     border-radius: 30px;
     width: 400px;
     height: 40px;
@@ -41,43 +41,20 @@
     outline: none;
 }
 
-.entrar{
-    margin-right: 20px;
-}
-
-.entrar a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    padding: 10px 20px;
-}
-
-#login{
+.container_perfil{
     background-color: #1e2a38;
-    border-radius: 30px;
     border: 2px solid #1e2a38;
-    transition: ease-in-out 0.5s;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    margin-right: 30px;
 }
 
-#login:hover{
-    background-color: #ffffff;
-    color: #1e2a38;
-    border: 2px solid #1e2a38;
+.container_perfil img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
 }
-
-#cadastro{
-    background-color: #1e2a38;
-    border-radius: 30px;
-    border: 2px solid #1e2a38;
-    transition: ease-in-out 0.5s;
-}
-
-#cadastro:hover{
-    background-color: #ffffff;
-    color: #1e2a38;
-    border: 2px solid #1e2a38
-}
-
 
 .sidebar{
     width:250px;

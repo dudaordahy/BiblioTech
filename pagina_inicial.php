@@ -1,14 +1,19 @@
+<?php 
+include_once './includes/conexao.php';
+include_once './includes/logado.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./teste/style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="sidebar">
-        <img src="img/logo.png" alt="logo">
+        <img src="./teste/img/logo.png" alt="logo">
 
         <ul>
             <li>🏠 Início</li>
@@ -34,12 +39,11 @@
 
     <div class="header">
         <div class="search">       
-            <input type="text" placeholder="Digite o nome do livro">
-            <img src="img/search.png" alt="lupa">
+            <input type="text" id="pesquisa" placeholder="Digite o nome do livro">
+            <img src="./teste/img/search.png" alt="lupa">
         </div>
-        <div class="entrar">
-            <a href="#" id="login">Entra</a>
-            <a href="#" id="cadastro">Cadastro</a>
+        <div class="container_perfil">
+            <a href="#" id="perfil"><img src="./teste/img/user.png" alt="perfil"></a>
         </div>
     </div>
 
@@ -47,7 +51,7 @@
         <h1 id="catalogo_txt">Catálogo</h1>
         <div class="catalogo">
             <div class="livro">
-                <img src="img/capa-1.jpg" alt="poster">
+                <img src="./teste/img/capa-1.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -58,10 +62,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Vermelho, Branco e Sangue Azul</p>
+                <p id="title" class="item">Vermelho, Branco e Sangue Azul</p>
             </div>
             <div class="livro">
-                <img src="img/capa-2.jpg" alt="poster">
+                <img src="./teste/img/capa-2.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -72,10 +76,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Herry Potter e A Pedra Filosofal</p>
+                <p id="title" class="item">Harry Potter e A Pedra Filosofal</p>
             </div>
             <div class="livro">
-                <img src="img/capa-3.jpg" alt="poster">
+                <img src="./teste/img/capa-3.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -86,10 +90,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Romeu e Julieta</p>
+                <p id="title" class="item">Romeu e Julieta</p>
             </div>
             <div class="livro">
-                <img src="img/capa-4.jpg" alt="poster">
+                <img src="./teste/img/capa-4.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -100,10 +104,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">A Guerra dos Tronos</p>
+                <p id="title" class="item">A Guerra dos Tronos</p>
             </div>
             <div class="livro">
-                <img src="img/capa-5.jpg" alt="poster">
+                <img src="./teste/img/capa-5.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -114,10 +118,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">É Assim que Acaba</p>
+                <p id="title" class="item">É Assim que Acaba</p>
             </div>
             <div class="livro">
-                <img src="img/capa-6.jpg" alt="poster">
+                <img src="./teste/img/capa-6.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -128,10 +132,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Amor e Gelato</p>
+                <p id="title" class="item">Amor e Gelato</p>
             </div>
             <div class="livro">
-                <img src="img/capa-7.jpg" alt="poster">
+                <img src="./teste/img/capa-7.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -142,10 +146,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Os Sete Maridos de Eveliyn Hugo</p>
+                <p id="title" class="item">Os Sete Maridos de Eveliyn Hugo</p>
             </div>
             <div class="livro">
-                <img src="img/capa-8.jpg" alt="poster">
+                <img src="./teste/img/capa-8.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -156,10 +160,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">O Morro dos Ventos Uivantes</p>
+                <p id="title" class="item">O Morro dos Ventos Uivantes</p>
             </div>
             <div class="livro">
-                <img src="img/capa-9.jpg" alt="poster">
+                <img src="./teste/img/capa-9.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -170,10 +174,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Veríth</p>
+                <p id="title" class="item">Veríth</p>
             </div>
             <div class="livro">
-                <img src="img/capa-10.jpg" alt="poster">
+                <img src="./teste/img/capa-10.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -184,10 +188,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Por Lugares Incríveis</p>
+                <p id="title" class="item">Por Lugares Incríveis</p>
             </div>
             <div class="livro">
-                <img src="img/capa-11.jpg" alt="poster">
+                <img src="./teste/img/capa-11.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -198,10 +202,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">Pequeno Príncipe</p>
+                <p id="title" class="item">Pequeno Príncipe</p>
             </div>
             <div class="livro">
-                <img src="img/capa-12.jpg" alt="poster">
+                <img src="./teste/img/capa-12.jpg" alt="poster">
                 <div class="raking">
                     <div class="rating">
                         <span class="star" data-value="1">★</span>
@@ -212,10 +216,10 @@
                     </div>
                     <p id="resultado">(0)</p>
                 </div>
-                <p id="title">O Duque e Eu</p>
+                <p id="title" class="item">O Duque e Eu</p>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./teste/script.js"></script>
 </body>
 </html>
