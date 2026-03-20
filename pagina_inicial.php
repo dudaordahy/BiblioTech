@@ -54,17 +54,22 @@ include_once './includes/logado.php';
 
 $sql = "SELECT * FROM livros";
 $resultado = mysqli_query($conexao, $sql);
+$reservado = .$row['reservado']
 
 if (mysqli_num_rows($resultado) > 0) {
     while($row = mysqli_fetch_assoc($resultado)) {
 
         echo '<div class="livro">';
-if()
+    // if($reservado = 1){
+        // <img src="./teste/img/capa-1.jpg" alt="poster">
+        // <p id="title" class="item">'.$row['nome_livro'].'</p>
+    // } else{
         echo '      <a href="./actions/reservas.php?idLivro='.$row['id_livro'].'">
                     <img src="./teste/img/capa-1.jpg" alt="poster">
                     <p id="title" class="item">'.$row['nome_livro'].'</p>
                     </a>
                 </div>';
+    // }
     }
 } else {
     echo "0 resultados";
