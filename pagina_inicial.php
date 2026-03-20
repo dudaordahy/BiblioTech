@@ -43,82 +43,41 @@ include_once './includes/logado.php';
             <img src="./teste/img/search.png" alt="lupa">
         </div>
         <div class="container_perfil">
-            <a href="#" id="perfil"><img src="./teste/img/user.png" alt="perfil"></a>
+            <button><img src="./teste/img/user.png" alt="perfil"></button>
         </div>
     </div>
 
     <div class="section">
         <h1 id="catalogo_txt">Catálogo</h1>
         <div class="catalogo">
-<?php 
 
-$sql = "SELECT * FROM livros";
-$resultado = mysqli_query($conexao, $sql);
-$reservado = .$row['reservado']
+            <?php 
+            $sql = "SELECT * FROM livros";
+            $resultado = mysqli_query($conexao, $sql);
 
-if (mysqli_num_rows($resultado) > 0) {
-    while($row = mysqli_fetch_assoc($resultado)) {
+            if (mysqli_num_rows($resultado) > 0) {
+                while($row = mysqli_fetch_assoc($resultado)) {
 
-        echo '<div class="livro">';
-    // if($reservado = 1){
-        // <img src="./teste/img/capa-1.jpg" alt="poster">
-        // <p id="title" class="item">'.$row['nome_livro'].'</p>
-    // } else{
-        echo '      <a href="./actions/reservas.php?idLivro='.$row['id_livro'].'">
-                    <img src="./teste/img/capa-1.jpg" alt="poster">
-                    <p id="title" class="item">'.$row['nome_livro'].'</p>
-                    </a>
-                </div>';
-    // }
-    }
-} else {
-    echo "0 resultados";
-}
-?>
-            <div class="livro">
-                <img src="./teste/img/capa-2.jpg" alt="poster">
-                <p id="title" class="item">Harry Potter e A Pedra Filosofal</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-3.jpg" alt="poster">
-                <p id="title" class="item">Romeu e Julieta</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-4.jpg" alt="poster">
-                <p id="title" class="item">A Guerra dos Tronos</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-5.jpg" alt="poster">
-                <p id="title" class="item">É Assim que Acaba</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-6.jpg" alt="poster">
-                <p id="title" class="item">Amor e Gelato</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-7.jpg" alt="poster">
-                <p id="title" class="item">Os Sete Maridos de Eveliyn Hugo</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-8.jpg" alt="poster">
-                <p id="title" class="item">O Morro dos Ventos Uivantes</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-9.jpg" alt="poster">
-                <p id="title" class="item">Veríth</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-10.jpg" alt="poster">
-                <p id="title" class="item">Por Lugares Incríveis</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-11.jpg" alt="poster">
-                <p id="title" class="item">Pequeno Príncipe</p>
-            </div>
-            <div class="livro">
-                <img src="./teste/img/capa-12.jpg" alt="poster">
-                <p id="title" class="item">O Duque e Eu</p>
-            </div>
+                    echo '<div class="livro">';
+
+                    if($row['reservado']){
+                        echo '<div class="indisponivel">';
+                        echo '<img src="'.$row['capa_livro'].'">';
+                        echo '<p id="title" class="item">'.$row['nome_livro'].' (Indisponível)</p>';
+                        echo '</div>';
+                    } else {
+                        echo '<a href="./actions/reservas.php?idLivro='.$row['id_livro'].'">';
+                        echo '<img id="capa" src="'.$row['capa_livro'].'">';
+                        echo '<p id="title" class="item">'.$row['nome_livro'].'</p>';
+                        echo '</a>';
+                    }
+                    
+                    echo '</div>';
+                }
+            } else{
+                echo "0 resultados";
+            }
+            ?>
         </div>
     </div>
 

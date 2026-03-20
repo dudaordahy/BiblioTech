@@ -50,6 +50,15 @@
     margin-right: 30px;
 }
 
+.container_perfil button{
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
 .container_perfil img{
     width: 40px;
     height: 40px;
@@ -113,7 +122,22 @@
     padding: 0;
 }
 
-.livro{
+.indisponivel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+
+.indisponivel img{
+    width: 100px;
+    height: 150px;
+    box-shadow: 5px 5px 5px 2px #1e2a38;
+}
+
+a{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -121,6 +145,8 @@
     width: auto;
     height: auto;
     padding: 10px;
+    text-decoration: none;
+    color: #1e2a38;
 }
 
 .livro p{
@@ -128,14 +154,14 @@
     text-align: center;
 }
 
-.livro img{
+#capa{
     width: 100px;
     height: 150px;
     box-shadow: 5px 5px 5px 2px #1e2a38;
     transition: ease-in-out 0.5s;
 }
 
-.livro img:hover{
+#capa:hover{
     width: 110px;
     height: 160px;
 }
