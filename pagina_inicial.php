@@ -18,7 +18,6 @@ include_once './includes/logado.php';
         <ul>
             <li>🏠 Início</li>
             <li>⭐ Favoritos</li>
-            <li>📚 Minha Biblioteca</li>
         </ul>
 
         <h3>Categorias</h3>
@@ -33,7 +32,6 @@ include_once './includes/logado.php';
         <ul>
             <li>👤 Perfil</li>
             <li>⚙️ Configurações</li>
-            <li>🚪 Sair</li>
         </ul>
     </div>
 
