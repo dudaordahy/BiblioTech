@@ -40,9 +40,6 @@ include_once './includes/logado.php';
             <input type="text" id="pesquisa" placeholder="Digite o nome do livro">
             <img src="./teste/img/search.png" alt="lupa">
         </div>
-        <div class="container_perfil">
-            <button><img src="./teste/img/user.png" alt="perfil"></button>
-        </div>
     </div>
 
     <div class="section">
