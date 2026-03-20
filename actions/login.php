@@ -6,7 +6,7 @@ include_once '../includes/conexao.php';
 $email= $_POST['email'];
 $senha = $_POST['senha'];
 
-$sql = "SELECT email, senha FROM alunos WHERE email = '{$email}' AND senha = '{$senha}'";
+$sql = "SELECT id_aluno, email, nome_aluno FROM alunos WHERE email = '{$email}' AND senha = '{$senha}'";
 
 // executar o banco de dados
 $resultado = mysqli_query($conexao, $sql);

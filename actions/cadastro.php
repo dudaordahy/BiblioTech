@@ -12,6 +12,6 @@ $sql = "INSERT INTO alunos (nome_aluno, email, senha) VALUES ('{$nome_aluno}', '
 mysqli_query($conexao,$sql);
 
 // redireciona
-header('Location: ../pagina_inicial.php');
+header('Location: ../pagina_login.php');
 exit();
 ?>

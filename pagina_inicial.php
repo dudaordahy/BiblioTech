@@ -50,176 +50,74 @@ include_once './includes/logado.php';
     <div class="section">
         <h1 id="catalogo_txt">Catálogo</h1>
         <div class="catalogo">
-            <div class="livro">
-                <img src="./teste/img/capa-1.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
-                <p id="title" class="item">Vermelho, Branco e Sangue Azul</p>
-            </div>
+<?php 
+
+$sql = "SELECT * FROM livros";
+$resultado = mysqli_query($conexao, $sql);
+
+if (mysqli_num_rows($resultado) > 0) {
+    while($row = mysqli_fetch_assoc($resultado)) {
+
+        echo '<div class="livro">';
+if()
+        echo '      <a href="./actions/reservas.php?idLivro='.$row['id_livro'].'">
+                    <img src="./teste/img/capa-1.jpg" alt="poster">
+                    <p id="title" class="item">'.$row['nome_livro'].'</p>
+                    </a>
+                </div>';
+    }
+} else {
+    echo "0 resultados";
+}
+?>
             <div class="livro">
                 <img src="./teste/img/capa-2.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">Harry Potter e A Pedra Filosofal</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-3.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">Romeu e Julieta</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-4.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">A Guerra dos Tronos</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-5.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">É Assim que Acaba</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-6.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">Amor e Gelato</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-7.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">Os Sete Maridos de Eveliyn Hugo</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-8.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">O Morro dos Ventos Uivantes</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-9.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">Veríth</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-10.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">Por Lugares Incríveis</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-11.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">Pequeno Príncipe</p>
             </div>
             <div class="livro">
                 <img src="./teste/img/capa-12.jpg" alt="poster">
-                <div class="raking">
-                    <div class="rating">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <p id="resultado">(0)</p>
-                </div>
                 <p id="title" class="item">O Duque e Eu</p>
             </div>
         </div>
     </div>
+
+
     <script src="./teste/script.js"></script>
 </body>
 </html>
